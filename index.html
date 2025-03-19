@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trump Tweet Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script> -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/onnxruntime-web@1.21.0/dist/ort.min.js
+    "></script>
+</head>
+<body>
+    <div class="tweet-container">
+        <h1>Trump Tweet Generator</h1>
+        <div class="container">
+            <div class="tweet">
+              <div class="profile">
+                <img src="trump_profile.jpg" alt="Trump">
+                <div class="profile-info">
+                  <strong>Donald J. Trump</strong>
+                  <span>@realDonaldTrump</span>
+                </div>
+              </div>
+              <p class="tweet-text" id="generated-tweet">Make America Great Again!</p>
+              <div class="tweet-actions">
+                <span><i class="fa-regular fa-comment"></i> 5K</span>
+                <span><i class="fa-solid fa-retweet"></i> 10K</span>
+                <span><i class="fa-regular fa-heart"></i> 50K</span>
+              </div>
+            </div>
+        </div>
+        <button id="generate-button">Generate Trump Tweet</button>
+    </div>
+    <footer>
+        <a href="https://github.com/tusharmurali/trump-tweet-generator" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
