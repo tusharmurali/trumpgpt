@@ -6,18 +6,19 @@
     <title>Trump Tweet Generator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script> -->
     <script src="
-    https://cdn.jsdelivr.net/npm/onnxruntime-web@1.21.0/dist/ort.min.js
+        https://cdn.jsdelivr.net/npm/onnxruntime-web@1.21.0/dist/ort.min.js
     "></script>
 </head>
 <body>
     <div class="tweet-container">
-        <h1>Trump Tweet Generator</h1>
+        <h1 class="title">Trump Tweet Generator</h1>
         <div class="container">
             <div class="tweet">
               <div class="profile">
-                <img src="trump_profile.jpg" alt="Trump">
+                <div class="profile-picture">
+                    <img src="trump_profile.jpg" alt="Trump">
+                </div>
                 <div class="profile-info">
                   <strong>Donald J. Trump</strong>
                   <span>@realDonaldTrump</span>
@@ -33,9 +34,13 @@
         </div>
         <button id="generate-button">Generate Trump Tweet</button>
     </div>
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p id="loading-message">Loading model...</p>
+    </div>
     <footer>
         <a href="https://github.com/tusharmurali/trump-tweet-generator" target="_blank">
-            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-github"></i>&nbsp; See how it works
         </a>
     </footer>
     <script src="script.js"></script>
