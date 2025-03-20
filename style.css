@@ -8,6 +8,21 @@ body {
     margin: 0;
   }
 
+  header {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
   .title {
     text-align: center;
   }
@@ -31,7 +46,7 @@ body {
     border-radius: 4px;
     position: absolute;
     z-index: 1;
-    bottom: 140%;
+    top: 140%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
