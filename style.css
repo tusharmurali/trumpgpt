@@ -11,6 +11,38 @@ body {
   .title {
     text-align: center;
   }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 6px;
+    cursor: pointer;
+    color: #777;
+    font-size: 20px;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 150px; /* Smaller width */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 3px 6px; /* Smaller padding */
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 12px; /* Smaller text */
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
   
   .container {
     width: 500px;
