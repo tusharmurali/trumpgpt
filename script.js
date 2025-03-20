@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         resultText.textContent = "";  // Clear previous text
         const delay = 30;
+        let nextChar = "";
+        let sentenceEnded = false;
 
         // Run the generation loop
         for (let i = 0; i < newChars; i++) {
@@ -63,20 +65,23 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 // Sample the next character based on the probabilities
                 const nextCharIndex = sample(probabilities);
+                nextChar = intToChar[nextCharIndex];
 
                 // Append the predicted character to the result
-                resultText.textContent += intToChar[nextCharIndex]
+                resultText.textContent += nextChar;
 
                 // Update the context with the new character
                 context[0].push(nextCharIndex);
+
                 await new Promise(resolve => setTimeout(resolve, delay));
-                if (i >= minChars) {  
-                    if (nextChar === "." || nextChar === "!" || nextChar === "?") {
-                        if (Math.random() < 0.7) break; // 70% chance to stop after punctuation
-                    } else if (nextChar === " " && Math.random() < 0.3) {
-                        break; // 30% chance to stop at a space after minChars
-                    }
+
+                // Check if the last character is a sentence-ending punctuation
+                if (i >= minChars && (nextChar === "." || nextChar === "!" || nextChar === "?")) {
+                    sentenceEnded = true;
                 }
+
+                // If a sentence has ended and there are at least minChars, break
+                if (sentenceEnded && i >= minChars) break;
             } catch (error) {
                 console.error("Error during inference:", error);
                 break; // If there's an error, stop the generation loop
