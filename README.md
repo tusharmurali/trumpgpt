@@ -1,4 +1,4 @@
-# Trump Tweet Generator
+# TrumpGPT
 
 A Transformer-based model (similar to GPT) trained on Donald Trump's tweets. The model architecture consists of multi-head self-attention layers and feed-forward neural networks. The dataset used is the [(Better) - Donald Trump Tweets!](https://www.kaggle.com/datasets/kingburrito666/better-donald-trump-tweets/data) from Kaggle.
 
